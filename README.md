@@ -81,6 +81,7 @@ We also include a Colab notebook with a demo showing how to run the baseline cod
 - Participants are advised to clone the latest codes from this repository and replace the proposed 'data-free' quantization logic in new `main.py` file.
 - Also make sure to set the path of the ImageNet validation set in `dataset.py`.
 - To run the testing phase models,
+
 ```bash
 bash run_test.bash > ./output_test.txt
 ``` 
@@ -92,7 +93,7 @@ bash run.bash > ./output.txt
 ``` 
 and upload `output.txt` for validation phase.
 
-- After test phase, participants may need to upload the following in .zip format:
+- After test phase, participants may need to provide the following in .zip format:
 
     1. `output_test.txt`
     2. Code (*with clear comments where the modification has been done*)
