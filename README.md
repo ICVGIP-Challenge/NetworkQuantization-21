@@ -79,6 +79,7 @@ We also include a Colab notebook with a demo showing how to run the baseline cod
     2. Inception V3
     3. MobileNet V3
 - Participants are advised to clone the latest codes from this repository and replace the proposed 'data-free' quantization logic in new `main.py` file.
+- Also make sure to set the path of the ImageNet validation set in `dataset.py`.
 - To run the testing phase models,
 ```bash
 bash run_test.bash > ./output_test.txt
