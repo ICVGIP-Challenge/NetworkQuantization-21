@@ -74,13 +74,30 @@ We also include a Colab notebook with a demo showing how to run the baseline cod
 - *Note: Do not change the output format of the baseline code. The output.txt file will be parsed to compute the ranking during validation phase.*
 
 #### Testing Phase
-- During test phase, participants need to upload the following in .zip format:
+- We have added the following new models to be tested for quantization during test phase:
+    1. ResNet50
+    2. Inception V3
+    3. MobileNet V3
+- Participants are advised to clone the latest codes from this repository and replace the proposed 'data-free' quantization logic in new `main.py` file.
+- To run the testing phase models,
+```bash
+bash run_test.bash > ./output_test.txt
+``` 
+- And upload the `output_test.txt` for test phase submission.
 
-    1. `output.txt`
+- Note that, for validation phase, instructions remain the same, i.e., run the following
+```bash
+bash run.bash > ./output.txt
+``` 
+and upload `output.txt` for validation phase.
+
+- After test phase, participants may need to upload the following in .zip format:
+
+    1. `output_test.txt`
     2. Code (*with clear comments where the modification has been done*)
     3. quantized models for the supported/allowed models in the baseline code.
+    4. Report describing the proposed solution.
 
-- We will announce further instructions for testing phase in due course of time.
 
 #### Evaluation Metric
 The submissions will be judged for maximum compression and minimal drop in performance. The methods must have a compression ratio of more than 25%.

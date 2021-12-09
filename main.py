@@ -47,7 +47,8 @@ def arg_parse():
     parser.add_argument('--model',
                         type=str,
                         default='resnet18',
-                        choices=['resnet18', 'mobilenet_v2', 'shufflenet_v2_x1_0'],
+                        choices=['resnet18', 'mobilenet_v2', 'shufflenet_v2_x1_0', 
+                                 'resnet50_test', 'inception_v3_google_test', 'mobilenet_v3_large_test'],
                         help='name/id of imagenet fp32 pretrained models')
 
     parser.add_argument('--dataset',

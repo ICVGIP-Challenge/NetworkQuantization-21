@@ -25,7 +25,10 @@ from progress.bar import Bar
 model_urls = {
 				'resnet18': 'https://download.pytorch.org/models/resnet18-f37072fd.pth',
 				'mobilenet_v2': 'https://download.pytorch.org/models/mobilenet_v2-b0353104.pth',
-				'shufflenet_v2_x1_0': 'https://download.pytorch.org/models/shufflenetv2_x1-5666bf0f80.pth'
+				'shufflenet_v2_x1_0': 'https://download.pytorch.org/models/shufflenetv2_x1-5666bf0f80.pth',
+				"resnet50_test": "https://download.pytorch.org/models/resnet50-0676ba61.pth",
+				"inception_v3_google_test": "https://download.pytorch.org/models/inception_v3_google-0cc3c7bd.pth",
+				"mobilenet_v3_large_test": "https://download.pytorch.org/models/mobilenet_v3_large-8738ca79.pth"
 			}
 
 # for loading the pretrained imagenet fp32 weights 
@@ -37,6 +40,14 @@ def get_model_from_zoo(model_name):
 		model = models.mobilenet_v2(pretrained=False, quantize=False)
 	elif model_name == 'shufflenet_v2_x1_0':
 		model = models.shufflenet_v2_x1_0(pretrained=False, quantize=False)
+
+	# test_models loading	
+	elif model_name == 'resnet50_test':
+		model = models.resnet50(pretrained=False, quantize=False)
+	elif model_name == 'inception_v3_google_test':
+		model = models.inception_v3(pretrained=False, quantize=False)
+	elif model_name == 'mobilenet_v3_large_test':
+		model = models.mobilenet_v3_large(pretrained=False, quantize=False)
 	
 	checkpoint_url = model_urls[model_name]
 	model.load_state_dict(torch.hub.load_state_dict_from_url(checkpoint_url, progress=True))
